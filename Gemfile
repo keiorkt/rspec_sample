@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.2'
 
 group :production do
   gem 'pg'
-#  gem 'bootsnap', '>= 1.1.0', require: false
+  gem 'minitest', '5.11.3'
 end
 
 group :development, :test do
