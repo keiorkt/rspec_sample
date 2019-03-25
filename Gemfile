@@ -8,10 +8,10 @@ gem 'rails', '~> 5.2.2'
 
 group :production do
   gem 'pg'
+#  gem 'bootsnap', '>= 1.1.0', require: false
 end
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.3.6'
   gem 'puma', '~> 3.11'
   gem 'sass-rails', '~> 5.0'
   gem 'uglifier', '>= 1.3.0'
@@ -24,6 +24,7 @@ group :development, :test do
 # gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
   gem 'bootsnap', '>= 1.1.0', require: false
+  gem 'sqlite3', '~> 1.3.6'
 end
 
 group :development, :test do
