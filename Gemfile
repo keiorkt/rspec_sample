@@ -25,6 +25,7 @@ group :development, :test do
 # gem 'capistrano-rails', group: :development
   gem 'bootsnap', '>= 1.1.0', require: false
   gem 'sqlite3', '~> 1.3.6'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development, :test do
