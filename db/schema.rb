@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_01_043811) do
+ActiveRecord::Schema.define(version: 2019_04_06_115112) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "account_name"
+    t.integer "balance", default: 0
+    t.integer "lock_version", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
