@@ -6,3 +6,4 @@ RSpec.describe Blog, type: :model do
     expect(blog.full_content).to eq 'hello My name is keita'
   end
 end
+
