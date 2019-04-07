@@ -1,10 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "Blogs", type: :request do
-  describe "GET /blogs" do
-    it "works! (now write some real specs)" do
-      get blogs_path
-      expect(response).to have_http_status(200)
-    end
+describe 'home page', type: :request do
+  it 'creates a blog and redirects to the blog index page' do
+    get '/blogs/new/'
+    expect(response).to render_template(:new)
+
+    post '/blogs', params: { blog: { title: 'hello', body: 'hello world'} } 
+
+    expect(response).to redirect_to(assigns(:blog))
+    follow_redirect!
+
+    expect(response).to render_template(:show)
+    expect(response.body).to include('Blog was successfully created.')
   end
 end
+

@@ -6,6 +6,9 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
 group :production do
   gem 'pg'
   gem 'minitest', '5.11.3'
@@ -20,12 +23,12 @@ group :development, :test do
   gem 'turbolinks', '~> 5'
   gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
-# gem 'bcrypt', '~> 3.1.7'
 # gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
   gem 'bootsnap', '>= 1.1.0', require: false
   gem 'sqlite3', '~> 1.3.6'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do
