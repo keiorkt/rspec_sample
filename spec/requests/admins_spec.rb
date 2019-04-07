@@ -1,10 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe "Admins", type: :request do
-  describe "GET /admins" do
-    it "works! (now write some real specs)" do
-      get admins_path
-      expect(response).to have_http_status(200)
+describe 'Admins', type: :request do
+  describe 'GET #index' do
+    context 'when admin is logged out' do
+      before { get :index }
+
+      it 'redirects to the top page' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'when admin is logged in' do
+      before do
+        admin = create :admin
+        session[:admin_id] = admin.id
+        get :index
+      end
+      
+      it 'return status code 200' do
+        expect(response.status).to eq 200
+      end
+
+      it 'rendering index template' do
+        expect(response).to render_template :index
+      end
     end
   end
 end
